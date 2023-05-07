@@ -63,7 +63,7 @@ const handleExtraSpaces = ()=>{
     }
   return (
     <>
-    <div className={`bg-${mode} text-${mode}`}>
+    <div className={`container bg-${mode} text-${mode}`}>
 <div className= {`mb-3 my-4`}>
   <label for="exampleFormControlTextarea1" className={`form-label bg-${mode} text-${mode==='dark'?'light':'dark'} `}>{heading}</label>
   <textarea className={`form-control bg-${mode} text-${mode==='dark'?'light':'dark'} `} value={text} onChange={operate} id="exampleFormControlTextarea1"  rows="8"></textarea>
