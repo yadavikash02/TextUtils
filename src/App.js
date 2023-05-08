@@ -21,9 +21,15 @@ function App() {
   return (
    <BrowserRouter>
     <Header title="MLOVER" mode={mode} toggle={changeMode}/>
-    <Routes>
-      <Route path="/" element={<div className="container">
+    {/* <div className="container">
     <TextForm heading="Enter your text for analyze" mode={mode}/>
+    </div> */}
+    <Routes>
+      <Route path="/TextUtils" element={<div className="container">
+    <TextForm heading="Enter your text for analyze" mode={mode}/> 
+    </div>}/>
+    <Route path="/" element={<div className="container">
+    <TextForm heading="Enter your text for analyze" mode={mode}/> 
     </div>}/>
       <Route path="/about" element={<About heading="About Us" mode={mode}></About>}/>
 

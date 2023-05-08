@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function Header({ title,mode ,toggle}) {
   return (
     <div>
-      <nav className={`navbar navbar-expand-lg bg-${mode} navbar-${mode}`}>
+      <nav className={`navbar navbar-expand-lg bg-${mode==="dark"?"secondary":"light"} navbar-${mode}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/brand">
+          <Link className="navbar-brand" to="/TextUtils">
             {title}
           </Link>
           <button

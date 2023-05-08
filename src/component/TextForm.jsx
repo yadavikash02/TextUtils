@@ -68,20 +68,26 @@ const handleExtraSpaces = ()=>{
   <label for="exampleFormControlTextarea1" className={`form-label bg-${mode} text-${mode==='dark'?'light':'dark'} `}>{heading}</label>
   <textarea className={`form-control bg-${mode} text-${mode==='dark'?'light':'dark'} `} value={text} onChange={operate} id="exampleFormControlTextarea1"  rows="8"></textarea>
 </div>
-<button type="button" onClick={update} className="btn btn-success mx-2">{Button}</button>
-<button type="button" onClick={clearupdate} className="btn btn-success mx-3">clear</button>
-<button type="button" className="btn btn-success mx-2">Find</button>
-<input type="text" value={text1} onChange={operate1} className={`find mx-1 bg-${mode} text-${mode==='dark'?'light':'dark'}`} placeholder="find" />
-<button type="button" onClick={replaceupdate} className="btn btn-success mx-2">Replace</button>
-<input type="text" value={text2} onChange={operate2} className={ `replace bg-${mode} text-${mode==='dark'?'light':'dark'}` } placeholder="replace"/>
-<button type="submit" onClick={speak} className="btn btn-warning mx-2 my-2">Speak</button>
-<button type="submit" onClick={handleCapitalize} className="btn btn-warning mx-2 my-2">CFL</button>
-<button type="submit" onClick={handleExtraSpaces} className="btn btn-warning mx-2 my-2">RES</button>
+<button type="button" disabled={text===""}  onClick={update} className="btn btn-success mx-2">{Button}</button>
+<button type="button"disabled={text===""} onClick={clearupdate} className="btn btn-success mx-3">clear</button>
+{/* <button type="button"disabled={text===""} className="btn btn-success mx-2">Find</button> */}
+{/* <input type="text"disabled={text===""} value={text1} onChange={operate1} className={`find mx-1 bg-${mode} text-${mode==='dark'?'light':'dark'}`} placeholder="find" />
+<button type="button"disabled={text===""} onClick={replaceupdate} className="btn btn-success mx-2">Replace</button>
+<input type="text"disabled={text===""} value={text2} onChange={operate2} className={ `replace bg-${mode} text-${mode==='dark'?'light':'dark'}` } placeholder="replace"/> */}
+<button type="submit"disabled={text===""} onClick={speak} className="btn btn-warning mx-2 my-2">Speak</button>
+<button type="submit"disabled={text===""} onClick={handleCapitalize} className="btn btn-warning mx-2 my-2">CFL</button>
+<button type="submit"disabled={text===""} onClick={handleExtraSpaces} className="btn btn-warning mx-2 my-2">RES</button>
+<div className="input-group mb-3 ">
+  <button disabled={text===""} className="btn btn-primary " type="button" id="button-addon1">Find</button>
+  <input type="text"disabled={text===""}  value={text1} onChange={operate1} className={`find mx-1 bg-${mode} text-${mode==='dark'?'light':'dark'}`} placeholder="find" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+  <button disabled={text===""} className="btn btn-primary" type="button" onClick={replaceupdate} id="button-addon1">Replace</button>
+  <input  type="text"disabled={text===""} value={text2} onChange={operate2} className={`find mx-1 bg-${mode} text-${mode==='dark'?'light':'dark'}`} placeholder="replace" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+</div>
     </div>
     <div className="container my-3">
           <h2>Your text summary</h2>
-          <p>{text===""?text.split(" ").length-1:text.split(" ").length} words and {text.length} character</p>
-          <p>{text.split(" ").length*0.008} minutes</p>
+          <p>{text===""?0:text.split(" ").length} words and {text.length} character</p>
+          <p>{text===""?0:text.split(" ").length*0.008} minutes</p>
     </div>
     </>
   )
